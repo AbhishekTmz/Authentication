@@ -42,6 +42,10 @@ public class ShoppingController : ControllerBase
     [HttpPost]
     public async Task<IActionResult> CreateUserProduct(int id)
     {
+        var prod = await _DbContext.Products.FindAsync(id);
+        if (prod == null){
+return BadRequest();
+        }
         var user = User.Identity?.Name ?? string.Empty;
 
         var Shoppingcart = await _DbContext.ShoppingCarts.Where(shopcart => shopcart.User == user).FirstOrDefaultAsync();
