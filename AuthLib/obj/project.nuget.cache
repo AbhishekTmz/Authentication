@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Nv2QrqbSpee/CrL0TRJ+ZcBUO6viptkyWEG+1oWuLJ08E78uDFosUwA18tVeD4w1OdGSAIIcHnJLukBG/9VriQ==",
+  "dgSpecHash": "ub8PIKD+zur6mypLbZJGmfNPMRkg24cKcjZ+rm3Q+mFo0pb8XqmiS4rAg9bZUyqs8hif7VOe+gSk5XOvAgpb9A==",
   "success": true,
-  "projectFilePath": "/workspaces/Authentication/AuthLib/AuthLib.csproj",
+  "projectFilePath": "C:\\Authentication\\AuthLib\\AuthLib.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

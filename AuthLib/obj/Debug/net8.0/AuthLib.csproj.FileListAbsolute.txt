@@ -1,0 +1,12 @@
+C:\Authentication\AuthLib\bin\Debug\net8.0\AuthLib.deps.json
+C:\Authentication\AuthLib\bin\Debug\net8.0\AuthLib.dll
+C:\Authentication\AuthLib\bin\Debug\net8.0\AuthLib.pdb
+C:\Authentication\AuthLib\obj\Debug\net8.0\AuthLib.GeneratedMSBuildEditorConfig.editorconfig
+C:\Authentication\AuthLib\obj\Debug\net8.0\AuthLib.AssemblyInfoInputs.cache
+C:\Authentication\AuthLib\obj\Debug\net8.0\AuthLib.AssemblyInfo.cs
+C:\Authentication\AuthLib\obj\Debug\net8.0\AuthLib.csproj.CoreCompileInputs.cache
+C:\Authentication\AuthLib\obj\Debug\net8.0\AuthLib.sourcelink.json
+C:\Authentication\AuthLib\obj\Debug\net8.0\AuthLib.dll
+C:\Authentication\AuthLib\obj\Debug\net8.0\refint\AuthLib.dll
+C:\Authentication\AuthLib\obj\Debug\net8.0\AuthLib.pdb
+C:\Authentication\AuthLib\obj\Debug\net8.0\ref\AuthLib.dll

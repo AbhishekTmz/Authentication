@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 namespace AuthApi.Controllers;
 [Authorize]
 [ApiController]
-[Route("[controller]")]
+[Route("[controller]/[action]")]
 public class ShoppingController : ControllerBase
 {
   private readonly DBCtx _DbContext;
@@ -18,48 +18,46 @@ public class ShoppingController : ControllerBase
     }
 
 [HttpGet]
-    public async Task<List<Product>?> GetUsersProducts()
+    public async Task<List<Product>?> GetUserProduct()
     {
         var user = User.Identity?.Name ?? string.Empty;
 
-        var cart = await _DbContext.ShoppingCarts.Where(cart => cart.User == user).FirstOrDefaultAsync();
+        var Shoppingcart = await _DbContext.ShoppingCarts.Where(Shoppingcart => Shoppingcart.User == user).FirstOrDefaultAsync();
 
-        return cart?.ProductList;
+        return Shoppingcart?.ProductList;
     }
   [HttpPost]
-    public async Task<IActionResult> DeleteUsersProduct(int id)
+    public async Task<IActionResult> DeleteUserProduct(int id)
     {
         var user = User.Identity?.Name ?? string.Empty;
 
-        var cart = await _DbContext.ShoppingCarts.Where(cart => cart.User == user).FirstOrDefaultAsync();
+        var Shoppingcart = await _DbContext.ShoppingCarts.Where(Shoppingcart => Shoppingcart.User == user).FirstOrDefaultAsync();
 
-        cart?.ProductList.RemoveAll(product => product.Id == id);
+        Shoppingcart?.ProductList.RemoveAll(product => product.Id == id);
 
         await _DbContext.SaveChangesAsync();
 
         return Ok();
     }
     [HttpPost]
-    public async Task<IActionResult> CreateUsersProduct(int id)
+    public async Task<IActionResult> CreateUserProduct(int id)
     {
         var user = User.Identity?.Name ?? string.Empty;
 
-        var cart = await _DbContext.ShoppingCarts.Where(cart => cart.User == user).FirstOrDefaultAsync();
+        var Shoppingcart = await _DbContext.ShoppingCarts.Where(shopcart => shopcart.User == user).FirstOrDefaultAsync();
 
-        if (cart is null)
+        if (Shoppingcart is null)
         {
             _DbContext.Add(new ShoppingCartModel()
             {
                 User = user,
                 ProductList = [new Product()
-                {
-                    Id = id
-                }]
+                {Id = id}]
             });
         }
         else
         {
-            cart.ProductList.Add(new Product() { Id = id });
+            Shoppingcart.ProductList.Add(new Product() { Id = id });
         }
 
         await _DbContext.SaveChangesAsync();
